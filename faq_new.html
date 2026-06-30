@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMS FAQ</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-green: #059669;
+            --primary-light-green: #a8e2cffd;
+            --primary-teal: #198753;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f4f6f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .top-header {
+            background: var(--primary-green);
+            color: white;
+            padding: 8px 0;
+            margin: 0;
+        }
+
+        .hero-section {
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-box {
+            background: var(--primary-light-green);
+            color: white;
+            border-radius: 0 0 8px 8px;
+            padding: 15px 20px;
+            margin: 0;
+        }
+
+
+
+        .ams-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .ams-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .ams-subtitle {
+            font-size: 15px;
+            opacity: .95;
+        }
+
+        .login-btn {
+            border-radius: 25px;
+            padding: 8px 20px;
+            font-weight: 600;
+        }
+
+        .top-header {
+            margin-bottom: 0 !important;
+        }
+
+        .hero {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+      
+        }
+
+        .header-logo {
+            object-fit: contain;
+        }
+
+
+
+        .hero h1 {
+            font-size: 1.4rem;
+            margin-bottom: 4px;
+        }
+
+        /* Login Button */
+        .login-btn {
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            min-width: 90px;
+        }
+
+        /* Header Logo */
+        .header-logo {
+            object-fit: contain;
+        }
+
+        /* FAQ Count */
+        .faq-count {
+            font-size: 13px;
+            color: #6c757d;
+        }
+
+        /* Accordion */
+        .accordion-item {
+            border: 1px solid #dee2e6;
+            border-radius: 8px !important;
+            overflow: hidden;
+            margin-bottom: 8px;
+            background: #e7f1ff;
+            color: #3c075a;
+            box-shadow: none;
+        }
+
+        .accordion-button {
+            font-size: 15px;
+            padding: 12px 15px;
+            font-weight: 500;
+        }
+
+        .accordion-body {
+            font-size: 14px;
+            padding: 12px 15px;
+            line-height: 1.5;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: #e7f1ff;
+            color: #000000;
+            box-shadow: none;
+             font-weight: bold;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+
+        #noResult {
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+
+            .header-section {
+                flex-direction: column;
+                align-items: flex-start !important;
+                gap: 15px;
+            }
+
+            .login-area {
+                width: 100%;
+            }
+
+            .login-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero -->
+    <!-- Top Header -->
+    <section class="top-header">
+
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center header-section">
+
+                <div class="d-flex align-items-center">
+
+                    <img src="bd_govt.png" alt="Bangladesh Government Logo" width="80" height="80"
+                        class="me-3 header-logo">
+
+                    <div>
+
+                        <div class="fw-bold fs-3">
+                            ADP/RADP Management System
+                        </div>
+
+                        <div class="fs-6">
+                            Programming Division, Planning Commission
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="login-area">
+
+                    <a href="https://adp.plancomm.gov.bd/" target="_blank" class="btn btn-light login-btn">
+
+                        Login
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FAQ Header -->
+    <section class="hero-section  hero text-dark">
+
+        <div class="container">
+
+            <div class="hero-box text-center ">
+
+                <div class="ams-title mb-2 ">
+
+                 
+
+                    <div >
+
+                        <h1 class="mb-0 text-dark fw-bold">
+                            AMS FAQ
+                        </h1>
+
+                        <div class="ams-subtitle text-dark">
+                            Frequently Asked Questions
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row g-1 justify-content-center">
+
+                    <div class="col-md-3">
+
+                        <select id="categoryFilter" class="form-select">
+
+                            <option value="">
+                                All Categories
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <input type="text" id="faqSearch" class="form-control"
+                            placeholder="🔍 প্রশ্ন বা উত্তর খুঁজুন...">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-3">
+
+        <div class="container">
+
+            <div class="faq-count mb-2">
+                Showing <span id="faqTotal">0</span> FAQs
+            </div>
+
+            <div id="noResult" class="alert alert-warning d-none">
+                No FAQ found.
+            </div>
+
+            <div class="accordion" id="faqAccordion"></div>
+
+        </div>
+
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        let allFaqs = [];
+
+        function renderFaqs(data) {
+
+            let html = "";
+
+            data.forEach(faq => {
+
+                html += `
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faq${faq.id}">
+
+                                ${faq.question}
+
+                            </button>
+
+                        </h2>
+
+                        <div
+                            id="faq${faq.id}"
+                            class="accordion-collapse collapse">
+
+                            <div class="accordion-body bg-light">
+
+                                ${faq.answer}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                `;
+            });
+
+            $("#faqAccordion").html(html);
+
+            $("#faqTotal").text(data.length);
+
+            if (data.length === 0) {
+                $("#noResult").removeClass("d-none");
+            } else {
+                $("#noResult").addClass("d-none");
+            }
+        }
+
+        function populateCategories() {
+
+            let categories =
+                [...new Set(allFaqs.map(faq => faq.category).filter(Boolean))];
+
+            categories.sort();
+
+            categories.forEach(category => {
+
+                $("#categoryFilter").append(`
+                    <option value="${category}">
+                        ${category}
+                    </option>
+                `);
+
+            });
+
+        }
+
+        function filterFaqs() {
+
+            let keyword =
+                $("#faqSearch").val().toLowerCase();
+
+            let category =
+                $("#categoryFilter").val();
+
+            let filteredFaqs = allFaqs.filter(faq => {
+
+                let matchesKeyword =
+
+                    faq.question.toLowerCase().includes(keyword)
+
+                    ||
+
+                    faq.answer.toLowerCase().includes(keyword);
+
+                let matchesCategory =
+
+                    category === ""
+
+                    ||
+
+                    faq.category === category;
+
+                return matchesKeyword && matchesCategory;
+
+            });
+
+            renderFaqs(filteredFaqs);
+
+        }
+
+        $.getJSON("faqs.json?v=" + Date.now(), function (faqs) {
+
+            allFaqs = faqs;
+
+            populateCategories();
+
+            renderFaqs(allFaqs);
+
+            $("#faqSearch").on("keyup", filterFaqs);
+
+            $("#categoryFilter").on("change", filterFaqs);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
